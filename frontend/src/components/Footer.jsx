@@ -1,0 +1,24 @@
+const Footer = ({ completedTasksCount, activeTasksCount }) => {
+  return (
+    <>
+      {completedTasksCount + activeTasksCount > 0 && (
+        <div classname="text-center">
+          <p className="text-center text-sm text-muted-foreground">
+            {completedTasksCount > 0 && (
+              <>
+                Tuyệt vời, bạn đã hoàn thành {completedTasksCount} việc
+                {activeTasksCount > 0 &&
+                  `, còn ${activeTasksCount} việc nữa thôi. Cố lên!`}
+              </>
+            )}
+            {completedTasksCount === 0 && activeTasksCount > 0 && (
+              <>Hãy bắt đầu làm {activeTasksCount} nhiệm vụ nào!</>
+            )}
+          </p>
+        </div>
+      )}
+    </>
+  );
+};
+
+export default Footer;
